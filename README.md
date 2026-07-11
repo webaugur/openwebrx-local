@@ -30,7 +30,11 @@ This repo holds **scripts and config templates only** — not the huge SDR sourc
 2. **Install OpenWebRX** (editable from a clone of `webaugur/openwebrx` `develop`):  
    `scripts/install-openwebrx.sh /path/to/openwebrx`
 3. **Optional full decoder suite** (JS8, MSK144, DRM, DAB, HFDL, VDL2, soft AMBE, …):  
-   `scripts/build-extra-decoders.sh`
+   ```bash
+   ./scripts/build-extra-decoders.sh                 # all (skip existing)
+   FORCE=1 ./scripts/build-extra-decoders.sh         # rebuild all
+   ONLY=js8,dream,aircraft ./scripts/build-extra-decoders.sh
+   ```
 4. **Config**: copy `config/openwebrx.conf.example` → `$PREFIX/openwebrx.conf` and fix paths.  
    Copy `config/codecserver.conf.example` → `$PREFIX/etc/codecserver/codecserver.conf`.
 5. **Run**: `scripts/openwebrx-serve.sh` (or desktop launcher pointing at it).
