@@ -1,0 +1,20 @@
+# OpenWebRX local codecserver (software AMBE via mbelib)
+# Install to: $PREFIX/etc/codecserver/codecserver.conf
+[server:unixdomainsockets]
+socket=/tmp/codecserver.sock
+
+# optional TCP
+# [server:tcp]
+# port=1073
+# bind=127.0.0.1
+
+# Software MBE (mbelib) — community module; receive-side decoding
+[device:mbelib]
+driver=mbelib
+unvoiced_quality=3
+
+# Hardware AMBE (USB-3000 etc.) — enable if you have a dongle:
+# [device:dv3k]
+# driver=ambe3k
+# tty=/dev/ttyUSB0
+# baudrate=921600

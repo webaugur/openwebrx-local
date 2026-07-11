@@ -1,0 +1,12 @@
+[core]
+# Replace PREFIX with your install root, e.g. /home/YOU/Applications/OpenWebRX
+data_directory = PREFIX/data
+temporary_directory = /tmp/openwebrx
+log_level = INFO
+
+[web]
+port = 8073
+ipv6 = true
+
+[aprs]
+symbols_path = /usr/share/aprs-symbols/png
